@@ -1,16 +1,18 @@
+import Link from "next/link";
 
-// const getData = () => {
-//     return new Promise((resolve) => {
-//         setTimeout(() => {
-//             console.log('11111','data' + Math.random());
-//            resolve('data' + Math.random())
-//         }, 5000)
-
-//     })
-// }
 export default async function About() {
-  const data = await getData();
-  return <div>
-    <div>about</div>
-  </div>;
+  return (
+    <div className="h-50">
+      <div>about</div>
+      <Link scroll={false} replace prefetch={false} className="text-blue-300 block mt-60" href="/about/me">
+        Me
+      </Link>
+      <Link
+        className="text-blue-300 block"
+        href={{ pathname: "/about/me2", query: { id: 222 } }}
+      >
+        Me2
+      </Link>
+    </div>
+  );
 }

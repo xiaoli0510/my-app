@@ -1,3 +1,3 @@
 export default function Me(){
-    return <div>me1</div>
+    return <div className="h-50">me1</div>
 }
