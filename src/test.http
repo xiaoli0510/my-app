@@ -1,0 +1,10 @@
+GET http://localhost:3000/home?userId=123 HTTP/1.1
+
+
+# POST http://localhost:3000/api/user HTTP/1.1
+# Content-Type:application/json
+
+# {
+#     "name":"zs",
+#     "age": 22
+# }

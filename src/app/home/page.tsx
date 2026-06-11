@@ -1,3 +1,20 @@
-export default function Home (){
-    return <h2>home1</h2>
+'use client';
+import { redirect } from "next/navigation";
+import { useEffect } from "react";
+
+const checkLogin = async () => {
+  const res = await fetch("/api/login");
+  const data = await res.json();
+  if (data.code === 1) {
+    return true;
+  } else {
+    redirect("/");
+  }
+};
+
+export default function Home() {
+  useEffect(() => {
+    checkLogin();
+  }, []);
+  return <h2>home page11</h2>;
 }

@@ -1,18 +1,17 @@
-import Link from "next/link";
+"use client";
+import { permanentRedirect, redirect, useRouter } from "next/navigation";
 
-export default async function About() {
+export default function About({
+  children,
+}: {
+  children: React.ReactNode;
+}) {
   return (
-    <div className="h-50">
+    <div>
       <div>about</div>
-      <Link scroll={false} replace prefetch={false} className="text-blue-300 block mt-60" href="/about/me">
-        Me
-      </Link>
-      <Link
-        className="text-blue-300 block"
-        href={{ pathname: "/about/me2", query: { id: 222 } }}
-      >
-        Me2
-      </Link>
+      <button className="text-blue-300 block" onClick={ () => redirect('/about/me')}>Me</button>
+      <button className="text-blue-300 block" onClick={ () => permanentRedirect('/about/me2')}>Me2</button>
+      {children}
     </div>
   );
 }
