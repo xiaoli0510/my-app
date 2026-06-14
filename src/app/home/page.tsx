@@ -1,20 +1,35 @@
-'use client';
-import { redirect } from "next/navigation";
-import { useEffect } from "react";
+import Image from 'next/image';
+import Img1 from '@/public/img1.png';
 
-const checkLogin = async () => {
-  const res = await fetch("/api/login");
-  const data = await res.json();
-  if (data.code === 1) {
-    return true;
-  } else {
-    redirect("/");
-  }
-};
+export function Avatar() {
+  return <Image src="/img1.png" width={100} height={100} alt="用户头像" sizes="64px" />;
+}
+
+export function Banner() {
+  return <Image src="/img1.png" width={1920} height={600} alt="banner" sizes="100vh" />;
+}
+
+export function ContentImage() {
+  return (
+    <Image
+      src="/img1.png"
+      width={1200}
+      height={800}
+      alt="banner"
+      sizes="(max-width:780px) 100vh,(max-width:1200px) 50vh,1200px"
+    />
+  );
+}
 
 export default function Home() {
-  useEffect(() => {
-    checkLogin();
-  }, []);
-  return <h2>home page11</h2>;
+  const len = 3;
+  return (
+    <div>
+      <div>home</div>
+      <div> sdsadasdjsalkdjasl</div>
+      <Avatar/>
+      <Banner/>
+      <ContentImage/>
+    </div>
+  );
 }
