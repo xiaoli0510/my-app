@@ -15,7 +15,14 @@ export default function About() {
     onLCP(logDelta);
   }, []);
   return (
-    <div>默认语言的
+    <div>
+      <div>我是English语言的</div>
+      <button className="text-blue-300 block" onClick={() => redirect('/about/me')}>
+        Me
+      </button>
+      <button className="text-blue-300 block" onClick={() => permanentRedirect('/about/me2')}>
+        Me2
+      </button>
     </div>
   );
 }

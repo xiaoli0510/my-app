@@ -21,6 +21,7 @@ import '@/app/globals.css';
 import Link from 'next/link';
 import localFont from 'next/font/local';
 import Script from 'next/script';
+import { Metadata } from 'next';
 
 
 // ... 你的其他布局代码
@@ -35,6 +36,30 @@ const myFont = localFont({
   ],
   variable: '--font-ZhiyongDatongFont',
 });
+
+export const metadata: Metadata = {
+  metadataBase: new URL('http://localhost:3000'),
+  title: {
+     default: '牛肉粉',
+    template: '%s | 牛肉粉',
+  },
+  description: '...',
+    appleWebApp: {
+    capable: true,
+    title: '我想有个车',
+    statusBarStyle: 'black-translucent',
+  },
+   openGraph: {
+    title: 'my car',
+    description: 'The React Framework for the Web',
+    url: 'https://nextjs.org',
+    siteName: 'Next.js',
+   images: '/icon.png',
+    locale: 'en_US',
+    type: 'website',
+  },
+}
+ 
 
 
 export default function RootLayout({
